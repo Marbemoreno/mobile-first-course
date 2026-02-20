@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flora sheen Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    /**
+        tablets 768px
+        escritorios 1024px
+        largos 1280px
+        **/
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 1024px) {
+      .test {
+        background-color: green;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .test {
+        background-color: yellow;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__brand">
+      <img class="header__logo" src="assets/logo.svg" alt="Flora sheen Portfolio">
+      <span class="header__title">Personal</span>
+    </div>
+    <button class="header__toggle" aria-label="Toggle navigation">
+      <img class="header__toggle-icon" src="assets/toggle.svg" alt="Toggle">
+    </button>
+
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#">About me</a>
+        </li>
+
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#">Skills</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#">Projects</a>
+        </li>
+
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#">Contact Me</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="header__cta" aria-label="Download resume"> Resume</button>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="section-container">
+        <img class="hero__image" src="assets/hero.svg" alt="Flora sheen Portfolio">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Hello I’am <strong>Flora Sheen</strong><br />
+            Frontend <span class="outlined">Developer</span><br />
+            Based In <strong>India</strong>
+          </h1>
+          <p class="hero__description">
+            I'm Flora Sheen Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer
+            took a galley of type and scrambled it to specimen book.
+          </p>
+
+          <!-- 4 botones facebook ,redit, discord y  twitter -->
+          <div class="hero__buttons">
+            <button class="hero__button" aria-label="Facebook">
+              <img class="hero__button-icon" src="assets/facebook.svg" alt="Facebook">
+            </button>
+            <button class="hero__button" aria-label="Reddit">
+              <img class="hero__button-icon" src="assets/reddit.svg" alt="Reddit">
+            </button>
+            <button class="hero__button" aria-label="Discord">
+
+              <img class="hero__button-icon" src="assets/discord.svg" alt="Discord">
+            </button>
+            <button class="hero__button" aria-label="Twitter">
+              <img class="hero__button-icon" src="assets/twitter.svg" alt="Twitter">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="section-container">
+        <h2 class="skills__title section-title">My <strong>Skills</strong> Skills</h2>
+
+        <div class="skill__grid">
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/ts.svg" alt="TypeScript" />
+            </div>
+            <p class="skill-card__label">TypeScript</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/next.svg" alt="Next" />
+            </div>
+            <p class="skill-card__label">Next</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/js.svg" alt="JavaScript" />
+            </div>
+            <p class="skill-card__label">JavaScript</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/react.svg" alt="React" />
+            </div>
+            <p class="skill-card__label">React</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/git.svg" alt="Git" />
+            </div>
+            <p class="skill-card__label">Git</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/node.svg" alt="Node.js" />
+            </div>
+            <p class="skill-card__label">Node.js</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/js.svg" alt="JavaScript" />
+            </div>
+            <p class="skill-card__label">JavaScript</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/react.svg" alt="React" />
+            </div>
+            <p class="skill-card__label">React</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/git.svg" alt="Git" />
+            </div>
+            <p class="skill-card__label">Git</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__icon">
+              <img src="assets/node.svg" alt="Node.js" />
+            </div>
+            <p class="skill-card__label">Node.js</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="experience" id="experience">
+      <div class="section-container">
+        <h2 class="experience__title section-title">
+          My <strong>Experience</strong>
+        </h2>
+
+        <div class="experience-card">
+          <div class="experience-card__logo">
+            <img src="assets/google.svg" alt="Google" />
+          </div>
+
+          <h3 class="experience-card__role">
+            Lead Software Engineer at Google
+          </h3>
+          <p class="experience-card__date">Nov 2019 – Present</p>
+
+          <p class="experience-card__description">
+            As a Senior Software Engineer at Google, I played a pivotal role
+            in developing innovative solutions for Google's core search
+            algorithms. Collaborating with a dynamic team of engineers, I
+            contributed to the enhancement of search accuracy and efficiency,
+            optimizing user experiences for millions of users worldwide.
+          </p>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-card__logo">
+            <img src="assets/youtube.svg" alt="Youtube" />
+          </div>
+
+          <h3 class="experience-card__role">Software Engineer at Youtube</h3>
+          <p class="experience-card__date">Jan 2017 – Oct 2019</p>
+
+          <p class="experience-card__description">
+            At Youtube, I served as a Software Engineer, focusing on the
+            design and implementation of backend systems for the social media
+            giant's dynamic platform. Working on projects that involved
+            large-scale data processing and user engagement features, I
+            leveraged my expertise to ensure seamless functionality and
+            scalability.
+          </p>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-card__logo">
+            <img src="assets/apple.svg" alt="Apple" />
+          </div>
+
+          <h3 class="experience-card__role">
+            Junior Software Engineer at Apple
+          </h3>
+          <p class="experience-card__date">Jan 2016 – Dec 2017</p>
+
+          <p class="experience-card__description">
+            During my tenure at Apple, I held the role of Software Architect,
+            where I played a key role in shaping the architecture of
+            mission-critical software projects. Responsible for designing
+            scalable and efficient systems, I provided technical leadership to
+            a cross-functional team.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
