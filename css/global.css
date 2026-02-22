@@ -388,7 +388,7 @@ body {
 
 .project-list {
   container-name: project-list;
-  container-type: inline-size;
+  container-type: inline-size; /* basado en el ancho del contenedor no de la pantalla */
   display: flex;
   flex-direction: column;
   gap: var(--spacing-24);
@@ -444,7 +444,8 @@ body {
 .project-card__link {
   margin-top: var(--spacing-8);
 }
-
+/* para que el contenido se ajuste al contenedor */
+/* para eso es necesaio crear un contenedor con el nombre project-list y el tipo inline-size */
 @container project-list (min-width: 700px) {
   .project-card {
     flex-direction: row;
