@@ -19,17 +19,18 @@ body {
 }
 
 .outlined {
-
   color: transparent;
   font-weight: 800;
   color: var(--primary-white);
   /* -webkit-text-stroke: 2px black; */
-  text-shadow: var(--outline-width) 0 var(--primary-black),
+  text-shadow:
+    var(--outline-width) 0 var(--primary-black),
     calc(var(--outline-width) * -1) 0 var(--primary-black),
     0 var(--outline-width) var(--primary-black),
     0 calc(var(--outline-width) * -1) var(--primary-black),
     var(--outline-width) var(--outline-width) var(--primary-black),
-    calc(var(--outline-width) * -1) calc(var(--outline-width) * -1) var(--primary-black),
+    calc(var(--outline-width) * -1) calc(var(--outline-width) * -1)
+      var(--primary-black),
     var(--outline-width) calc(var(--outline-width) * -1) var(--primary-black),
     calc(var(--outline-width) * -1) var(--outline-width) var(--primary-black);
 }
@@ -61,7 +62,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-
   .header__nav,
   .header__cta {
     display: block;
@@ -80,7 +80,6 @@ body {
   }
 
   .header__cta {
-
     background-color: var(--primary-black);
     color: var(--primary-white);
     padding: var(--spacing-12) var(--spacing-24);
@@ -89,8 +88,6 @@ body {
     font-weight: 600;
   }
 }
-
-
 
 /** ----- Hero Section ----- **/
 
@@ -116,8 +113,6 @@ body {
   font-size: clamp(1.5rem, 4.5vw, 2.5rem);
   font-weight: 400;
   color: var(--primary-black);
-
-
 }
 
 .hero__ title strong {
@@ -145,7 +140,6 @@ body {
 }
 
 .hero__button {
-
   padding: var(--spacing-8);
   border-radius: var(--spacing-2);
   border: 1px solid var(--primary-black);
@@ -177,10 +171,7 @@ body {
 .hero__button-icon {
   width: 20px;
   height: 20px;
-
 }
-
-
 
 @media (min-width: 768px) {
   .hero .section-container {
@@ -190,13 +181,11 @@ body {
   .hero__content {
     max-width: 50%;
   }
-
 }
 
 /** ----- Skills Section ----- **/
 
 .skills {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,8 +198,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: var(--spacing-20);
 }
-
-
 
 .skill-card {
   display: flex;
@@ -227,7 +214,9 @@ body {
   background: var(--primary-white);
   border: 2px solid var(--primary-black);
 
-  transition: transform 0.15s ease, background-color 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .skill-card:hover {
@@ -287,7 +276,6 @@ body {
 /* --- EXPERIENCE SECTION --- */
 
 .experience {
-
   background-color: var(--primary-black);
   color: var(--primary-white);
 }
@@ -303,7 +291,7 @@ body {
   grid-template-columns: 32px 1fr;
   gap: var(--spacing-32);
   /*areas de la grid: depende de el nombre de las area dentro de las clases grid-area: nombre-area; y luego como se muestran en el grid-template-areas: 'logo role' 'date date' 'description description';*/
-  grid-template-areas: 'logo role' 'date date' 'description description';
+  grid-template-areas: "logo role" "date date" "description description";
   align-items: center;
 }
 
@@ -339,6 +327,55 @@ body {
 @media (min-width: 768px) {
   .experience-card {
     grid-template-columns: 32px 1fr;
-    grid-template-areas: 'logo role date ' 'description description description';
+    grid-template-areas: "logo role date " "description description description";
+  }
+}
+
+/** ----- About Me Section ----- **/
+
+.about-me__image {
+  width: 100%;
+  height: auto;
+  max-height: 30dvh;
+}
+
+.about-me__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-20);
+}
+
+.about-me__description {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+}
+
+.about-me__description p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--zinc-500);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .about-me__image {
+    max-height: 50dvh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-me .section-container {
+    flex-direction: row;
+    gap: var(--spacing-32);
+    align-items: center;
+  }
+
+  .about-me__content {
+    max-width: 50%;
+  }
+  .about-me__image {
+    max-height: 40dvh;
   }
 }
