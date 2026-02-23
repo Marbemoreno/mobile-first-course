@@ -55,11 +55,16 @@
         />
         <span class="header__title">Personal</span>
       </div>
-      <button class="header__toggle" aria-label="Toggle navigation">
+      <button
+        class="header__toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
         <img class="header__toggle-icon" src="assets/toggle.svg" alt="Toggle" />
       </button>
 
-      <nav class="header__nav">
+      <nav class="header__nav" id="primary-navigation">
         <ul class="header__nav-list">
           <li class="header__nav-item">
             <a class="header__nav-link" href="#">About me</a>
@@ -602,7 +607,6 @@
                   type="text"
                   placeholder="Your name"
                   class="contact__input"
-                  aria-label="Your name"
                   autocomplete="name"
                 />
               </div>
@@ -613,7 +617,6 @@
                   type="email"
                   placeholder="Email"
                   class="contact__input"
-                  aria-label="Email"
                   inputmode="email"
                   autocomplete="email"
                 />
@@ -627,7 +630,6 @@
                   type="text"
                   placeholder="Your website (If exists)"
                   class="contact__input"
-                  aria-label="Your website"
                   inputmode="url"
                   autocomplete="url"
                 />
@@ -641,7 +643,6 @@
                   type="text"
                   placeholder="Your phone number"
                   class="contact__input"
-                  aria-label="Your phone"
                   inputmode="tel"
                   autocomplete="tel"
                 />
@@ -654,7 +655,6 @@
                   id="message"
                   placeholder="How can I help?*"
                   class="contact__textarea"
-                  aria-label="How can I help?"
                 ></textarea>
               </div>
               <div class="contact__actions">
@@ -700,5 +700,41 @@
         </div>
       </section>
     </main>
+    <script>
+      const navToggle = document.querySelector(".header__toggle");
+      const mainNav = document.querySelector(".header__nav");
+      const navLinks = document.querySelectorAll(".header__nav-link");
+
+      if (navToggle && mainNav) {
+        const closeMenu = () => {
+          mainNav.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        };
+
+        navToggle.addEventListener("click", () => {
+          const isOpen = mainNav.classList.toggle("is-open");
+          navToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("click", (event) => {
+          if (
+            !mainNav.contains(event.target) &&
+            !navToggle.contains(event.target)
+          ) {
+            closeMenu();
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 1024) {
+            closeMenu();
+          }
+        });
+      }
+    </script>
   </body>
 </html>

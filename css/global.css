@@ -42,6 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .header__brand {
@@ -61,6 +62,65 @@ body {
   display: none;
 }
 
+.header__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--spacing-8);
+  border: 1px solid var(--primary-black);
+  border-radius: var(--spacing-4);
+}
+
+.header__toggle:focus-visible {
+  outline: 2px solid var(--primary-black);
+  outline-offset: 2px;
+}
+
+.header__toggle:active {
+  transform: scale(0.98);
+}
+
+.header__nav {
+  position: absolute;
+  top: calc(100% + var(--spacing-8));
+  left: var(--spacing-16);
+  right: var(--spacing-16);
+  z-index: 20;
+  background: var(--primary-white);
+  border: 1px solid var(--primary-black);
+  border-radius: var(--spacing-4);
+  padding: var(--spacing-8);
+}
+
+.header__nav.is-open {
+  display: block;
+}
+
+.header__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.header__nav-link {
+  display: block;
+  min-height: 44px;
+  padding: var(--spacing-12);
+  border-radius: var(--spacing-4);
+}
+
+.header__nav-link:focus-visible {
+  outline: 2px solid var(--primary-black);
+  outline-offset: 2px;
+}
+
+.header__nav-link:hover,
+.header__nav-link:active {
+  background-color: var(--zinc-100);
+}
+
 @media (min-width: 1024px) {
   .header__nav,
   .header__cta {
@@ -71,12 +131,25 @@ body {
     display: none;
   }
 
+  .header__nav {
+    position: static;
+    z-index: auto;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    left: auto;
+    right: auto;
+    top: auto;
+  }
+
   .header__nav ul {
     display: flex;
     gap: var(--spacing-32);
     font-size: 20px;
     font-weight: 600;
     color: var(--primary-black);
+    flex-direction: row;
   }
 
   .header__cta {
@@ -115,7 +188,7 @@ body {
   color: var(--primary-black);
 }
 
-.hero__ title strong {
+.hero__title strong {
   font-size: 20px;
   font-weight: 700;
   color: var(--primary-black);
@@ -162,6 +235,15 @@ body {
 .hero__button:hover {
   background-color: var(--primary-black);
   color: var(--primary-white);
+}
+
+.hero__button:focus-visible {
+  outline: 2px solid var(--primary-black);
+  outline-offset: 2px;
+}
+
+.hero__button:active {
+  transform: scale(0.98);
 }
 
 .hero__button:hover .hero__button-icon {
@@ -443,6 +525,21 @@ body {
 
 .project-card__link {
   margin-top: var(--spacing-8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--spacing-4);
+}
+
+.project-card__link:focus-visible {
+  outline: 2px solid var(--primary-white);
+  outline-offset: 2px;
+}
+
+.project-card__link:active {
+  transform: scale(0.98);
 }
 /* para que el contenido se ajuste al contenedor */
 /* para eso es necesaio crear un contenedor con el nombre project-list y el tipo inline-size */
@@ -659,9 +756,37 @@ body {
   opacity: 0.9;
 }
 
+.contact__button:focus-visible {
+  outline: 2px solid var(--primary-black);
+  outline-offset: 2px;
+}
+
+.contact__button:active {
+  opacity: 0.95;
+  transform: scale(0.98);
+}
+
 .contact__socials {
   display: flex;
   gap: var(--spacing-24);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--spacing-4);
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--primary-black);
+  outline-offset: 2px;
+}
+
+.social-link:active {
+  transform: scale(0.98);
 }
 
 .contact__info {
@@ -694,11 +819,11 @@ body {
 }
 
 @media (min-width: 768px) {
-  .contact .container {
+  .contact .section-container {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: var(--spacing-60); /* More space on desktop */
+    gap: var(--spacing-40); /* More space on desktop */
   }
 
   .contact__form-wrapper {
